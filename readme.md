@@ -10,7 +10,7 @@ These are common challenges when working with warcraft2 assets.
 
 ![alt text](./war2.gif)
 
-Lounch: ```py main.py```, use keyboard to walk and spacebar to attack.
+Lounch: ```py main.py```, use arrow keys to walk and spacebar to attack.
 
 I'm looking forward to add terrain and some nice Map class if I ll ever have free time.
 
