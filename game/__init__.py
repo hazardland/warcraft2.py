@@ -102,11 +102,11 @@ class Scene:
                     running = False
 
             self.keyboard = pygame.key.get_pressed()
-            scene.update(delta)
+            self.update(delta)
 
             self.screen.fill(self.background)
 
-            scene.draw(self.screen)
+            self.draw(self.screen)
 
             pygame.display.update()
             delta = self.clock.tick(self.fps)
