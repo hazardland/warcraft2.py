@@ -4,7 +4,9 @@ Here is what I managed to achieve on my hangover weekend:
 
 1. Extracted all original sprites from Warcraft 2 with a little help of wargus tool.
 2. Learned how to replace default unit colors into other color
-3. Flipped some frames for right faced animations
+3. Flipped some frames for left faced animations
+
+These are common challenges when working with warcraft2 assets.
 
 ![alt text](./war2.gif)
 
