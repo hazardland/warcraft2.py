@@ -10,6 +10,8 @@ These are common challenges when working with warcraft2 assets.
 
 ![alt text](./war2.gif)
 
+Lounch: ```py main.py```, use keyboard to walk and spacebar to attack.
+
 I'm looking forward to add terrain and some nice Map class if I ll ever have free time.
 
 Game module contains for the moment:
