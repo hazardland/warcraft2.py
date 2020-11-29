@@ -1,6 +1,6 @@
 # Warcraft 2 Python
 
-Here is what I managed to achieve on my hungovery weekend:
+Here is what I managed to achieve on my hangover weekend:
 
 1. Extracted all original sprites from Warcraft 2 with a little help of wargus tool.
 2. Learned how to replace default unit colors into other color
