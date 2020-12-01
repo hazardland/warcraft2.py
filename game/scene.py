@@ -58,5 +58,5 @@ class Scene:
             self.debug(delta)
 
             pygame.display.update()
-            #delta = self.clock.tick(self.fps)
-            delta = self.clock.tick()
+            delta = self.clock.tick(self.fps)
+            #delta = self.clock.tick()

@@ -123,6 +123,6 @@ On day 2 I made Action class it is like a task for a unit which changes unit pro
 
 ## Day 3
 
-Map is not easy because first I needed a toool in which I can create a map and than import into game. After a little research it seems Tiled Map Editor returns a file in which in an one dimensional array I get map data, in which every element is a tile number in tileset. Of course that was enough and I tested displaying fixed size map. But I messed a little with creating tilesets in Editor and also map rendering dropped fps again:
+Map is not easy because first I needed a toool in which I could create a map and than import into game. After a little research it seems Tiled Map Editor returns a file in which in an one dimensional array I get map data, in which every element is a tile number from tileset. Of course that was enough and I tested displaying fixed size map. But I messed up a little with creating tilesets in Editor and also map rendering dropped fps again:
 
  ![alt text](./blog/images/first_map.png)
