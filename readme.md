@@ -1,5 +1,7 @@
 # Warcraft 2 Python
 
+## Day 1
+
 Here is what I managed to achieve on my hangover weekend:
 
 1. Extracted all original sprites from Warcraft 2 with a little help of wargus tool.
@@ -114,3 +116,13 @@ class Footman(Object):
         else:
             self.play('stand_'+self.horizontal+self.vertical)
 ```
+
+## Day 2
+
+On day 2 I made Action class it is like a task for a unit which changes unit properties in time or by speed, than I made little hogs which are known as critters in Warcraft and assigned random movement Actions. FPS dropped to 200 while having 1000 hogs on screen. I was almost happy because I had Sprite, Unit and Actions it was time for a Map.
+
+## Day 3
+
+Map is not easy because first I needed a toool in which I can create a map and than import into game. After a little research it seems Tiled Map Editor returns a file in which in an one dimensional array I get map data, in which every element is a tile number in tileset. Of course that was enough and I tested displaying fixed size map. But I messed a little with creating tilesets in Editor and also map rendering dropped fps again:
+
+ ![alt text](./blog/images/first_map.png)

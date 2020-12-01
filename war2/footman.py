@@ -1,50 +1,58 @@
 import pygame
-from game import Sprite
-from game import Object
+import game
 
-class Footman(Object):
-    def __init__(self):
-        super().__init__()
-        self.sprite = Sprite('./assets/sprites/footman.png',
-                             width=72,
-                             height=72,
-                             vertical=True,
-                             replace=((208, 212), (209, 213), (210, 214), (211, 215)),
-                             speed=10)
+BLUE = ((208, 212), (209, 213), (210, 214), (211, 215))
 
-        self.sprite.add('walk_up', cell=1, row=2, count=4)
-        self.sprite.add('walk_down', cell=5, row=2, count=4)
-        self.sprite.add('walk_right', cell=3, row=2, count=4)
-        self.sprite.add('walk_left', cell=3, row=2, count=4, flip=(True, False))
-        self.sprite.add('walk_rightup', cell=2, row=2, count=4)
-        self.sprite.add('walk_rightdown', cell=4, row=2, count=4)
-        self.sprite.add('walk_leftup', cell=2, row=2, count=4, flip=(True, False))
-        self.sprite.add('walk_leftdown', cell=4, row=2, count=4, flip=(True, False))
+class Sprite(game.Sprite):
+    def __init__(self, scene, replace):
+        super().__init__('./assets/sprites/grunt.png',
+                         width=72,
+                         height=72,
+                         vertical=True,
+                         replace=replace,
+                         pause=60)
 
-        self.sprite.add('stand_up', cell=1, row=1, count=1)
-        self.sprite.add('stand_down', cell=5, row=1, count=1)
-        self.sprite.add('stand_right', cell=3, row=1, count=1)
-        self.sprite.add('stand_left', cell=3, row=1, count=1, flip=(True, False))
-        self.sprite.add('stand_rightup', cell=2, row=1, count=1)
-        self.sprite.add('stand_rightdown', cell=4, row=1, count=1)
-        self.sprite.add('stand_leftup', cell=2, row=1, count=1, flip=(True, False))
-        self.sprite.add('stand_leftdown', cell=4, row=1, count=1, flip=(True, False))
+        self.add('walk_up', frame=(1, 2), count=4)
+        self.add('walk_down', frame=(5, 2), count=4)
+        self.add('walk_right', frame=(3, 2), count=4)
+        self.add('walk_left', frame=(3, 2), count=4, flip=(True, False))
+        self.add('walk_rightup', frame=(2, 2), count=4)
+        self.add('walk_rightdown', frame=(4, 2), count=4)
+        self.add('walk_leftup', frame=(2, 2), count=4, flip=(True, False))
+        self.add('walk_leftdown', frame=(4, 2), count=4, flip=(True, False))
 
-        self.sprite.add('attack_up', cell=1, row=6, count=4)
-        self.sprite.add('attack_down', cell=5, row=6, count=4)
-        self.sprite.add('attack_right', cell=3, row=6, count=4)
-        self.sprite.add('attack_left', cell=3, row=6, count=4, flip=(True, False))
-        self.sprite.add('attack_rightup', cell=2, row=6, count=4)
-        self.sprite.add('attack_rightdown', cell=4, row=6, count=4)
-        self.sprite.add('attack_leftup', cell=2, row=6, count=4, flip=(True, False))
-        self.sprite.add('attack_leftdown', cell=4, row=6, count=4, flip=(True, False))
+        self.add('stand_up', frame=(1, 1), count=1)
+        self.add('stand_down', frame=(5, 1), count=1)
+        self.add('stand_right', frame=(3, 1), count=1)
+        self.add('stand_left', frame=(3, 1), count=1, flip=(True, False))
+        self.add('stand_rightup', frame=(2, 1), count=1)
+        self.add('stand_rightdown', frame=(4, 1), count=1)
+        self.add('stand_leftup', frame=(2, 1), count=1, flip=(True, False))
+        self.add('stand_leftdown', frame=(4, 1), count=1, flip=(True, False))
+
+        self.add('attack_up', frame=(1, 6), count=4)
+        self.add('attack_down', frame=(5, 6), count=4)
+        self.add('attack_right', frame=(3, 6), count=4)
+        self.add('attack_left', frame=(3, 6), count=4, flip=(True, False))
+        self.add('attack_rightup', frame=(2, 6), count=4)
+        self.add('attack_rightdown', frame=(4, 6), count=4)
+        self.add('attack_leftup', frame=(2, 6), count=4, flip=(True, False))
+        self.add('attack_leftdown', frame=(4, 6), count=4, flip=(True, False))
+
+        scene.sprites['footman'] = self
+
+class Footman(game.Unit):
+    def __init__(self, scene):
+        super().__init__(scene)
+
+        self.sprite = self.scene.sprites['footman']
 
         self.anim = 'stand_down'
 
         self.x = 0
         self.y = 0
-        self.width = 180
-        self.height = 180
+        self.width = 72
+        self.height = 72
 
         self.vertical = 'down'
         self.horizontal = ''
